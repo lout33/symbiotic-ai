@@ -4,6 +4,8 @@ A personal coach that lives in your filesystem. Claude becomes your mirror, witn
 
 [![Watch the demo](image.png)](https://www.youtube.com/watch?v=cY3LvkB1EQM)
 
+[Watch the video](https://www.youtube.com/watch?v=cY3LvkB1EQM)
+
 ## What This Is
 
 Instead of using Claude as a generic assistant, this system gives Claude:
