@@ -2,7 +2,7 @@
 
 A personal coach that lives in your filesystem. Claude becomes your mirror, witness, and challenger.
 
-[Watch the demo](https://www.youtube.com/watch?v=cY3LvkB1EQM)
+[![Watch the demo](image.png)](https://www.youtube.com/watch?v=cY3LvkB1EQM)
 
 ## What This Is
 
@@ -149,8 +149,6 @@ If you want to edit manually, everything lives in **`CLAUDE.md`**:
 
 - Claude Code CLI (or any Claude interface that supports custom instructions)
 - A folder for your life system
-
-![Claude Life Assistant](image.png)
 
 ## Credits
 
