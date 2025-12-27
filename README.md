@@ -9,14 +9,44 @@ Instead of using Claude as a generic assistant, this system gives Claude:
 - **Context** — It knows your goals, fears, and how you work best
 - **Accountability** — Daily check-ins that actually hold you to your word
 
-## Quick Start
+## Installation
+
+### Option 1: Install as Plugin (Recommended)
+
+If you have access to a marketplace that hosts this plugin:
+
+```bash
+# Add the marketplace (if not already added)
+/plugin marketplace add <marketplace-url>
+
+# Install the plugin
+/plugin install life-assistant@<marketplace-name>
+```
+
+### Option 2: Install from Local Marketplace
+
+1. Clone this repository
+2. In Claude Code, add it as a local marketplace:
+   ```bash
+   /plugin marketplace add ./path/to/claude-life-assistant
+   ```
+3. Install the plugin:
+   ```bash
+   /plugin install life-assistant@local
+   ```
+
+### Option 3: Manual Setup (Legacy)
 
 1. **Clone/copy this folder** to your project directory
-2. **Run `/setup-life`** — Claude asks you a few questions and creates your files
-3. **Start using the daily commands:**
-   - `/start-day` — Morning kickoff
-   - `/check-day` — Quick check-in anytime
-   - `/end-day` — Evening review
+2. **Run `/setup-life`** — Claude asks you a few questions and fills in your profile
+
+## Quick Start
+
+After installation, use these commands:
+- `/setup-life` — First-time setup (fills in CLAUDE.md)
+- `/start-day` — Morning kickoff
+- `/check-day` — Quick check-in anytime
+- `/end-day` — Evening review
 
 That's it. No forms to fill. The system learns about you through conversation.
 
@@ -24,16 +54,14 @@ That's it. No forms to fill. The system learns about you through conversation.
 
 | File | Purpose |
 |------|---------|
-| `CLAUDE.md` | Instructions for Claude (read this to understand the system) |
-| `me.md` | Who you are — patterns, fears, how to challenge you |
-| `now.md` | Current focus — missions, MIT, modes |
+| `CLAUDE.md` | Everything — instructions, who you are, current focus |
 | `journal/` | Daily logs (Claude creates these automatically) |
 
 ## How It Works
 
 **Conversation > Documentation**
 
-You talk to Claude. Claude maintains the files. No manual file editing required.
+You talk to Claude. Claude maintains the file. No manual file editing required.
 
 When you say something important, Claude quotes your exact words:
 > 'your words preserved here'
@@ -43,7 +71,7 @@ This keeps your voice distinct from AI-generated text.
 ## The Commands
 
 ### `/setup-life`
-**Run this first.** One-time setup that creates your `me.md` and `now.md` through a quick conversation. Takes ~5 minutes.
+**Run this first.** One-time setup that fills in your "About Me" and "Now" sections through a quick conversation. Takes ~5 minutes.
 
 <details>
 <summary>See example setup conversation</summary>
@@ -72,13 +100,9 @@ First — what should I call you?
 
 **You:** Be direct. I need someone to cut through my BS.
 
-**Claude:** What's one question that snaps you back to reality when you're avoiding something?
+**Claude:** Got it. Let me update your file.
 
-**You:** Probably something like "are you building to avoid launching?"
-
-**Claude:** Got it. Let me set up your files.
-
-*[Creates me.md and now.md]*
+*[Updates CLAUDE.md]*
 
 You're set up. Here's how it works:
 - `/start-day` — Morning. Set your one thing.
@@ -100,7 +124,7 @@ Morning ritual. Claude asks one question: "What's your one thing today?"
 
 Then it:
 - Creates a journal entry
-- Updates now.md with your MIT
+- Updates the "Now" section with your MIT
 - Connects your task to your mission (if relevant)
 
 ### `/check-day`
@@ -109,7 +133,7 @@ Quick check-in anytime. Claude asks: "What are you doing right now?"
 Then it:
 - Reflects back what you're doing vs. what you said you'd do
 - Calls out if you're off track (gently)
-- Updates files if something changed
+- Updates CLAUDE.md if something changed
 
 ### `/end-day`
 Evening review. Claude asks: "How'd it go?"
@@ -121,26 +145,11 @@ Then it:
 
 ## Customization
 
-The system grows with you. After `/setup-life`, your files will fill in over time through conversation.
+The system grows with you. After `/setup-life`, your profile fills in over time through conversation.
 
-If you want to edit manually:
-- **`me.md`** — Add more about yourself, your patterns, quotes
-- **`now.md`** — Adjust modes, add projects
-- **`CLAUDE.md`** — Change how Claude challenges you
-
-### The Modes System
-
-In `now.md`, you can set your current mode:
-
-| Mode | Focus | Not Allowed |
-|------|-------|-------------|
-| Creative | Content, music, videos, writing | Job apps, system tweaking |
-| Project | Building, shipping code | New ideas, browsing |
-| Professional | Job hunt, follow-ups, freelance | Side projects |
-| Planning | Think, organize, decide next moves | Execution, building |
-| Recovery | Rest, recharge | Work decisions |
-
-Say "switching to [mode]" and Claude updates it.
+If you want to edit manually, everything lives in **`CLAUDE.md`**:
+- **"About Me" section** — Your patterns, mission, how to challenge you
+- **"Now" section** — Current focus, MIT, active projects
 
 ## Philosophy
 

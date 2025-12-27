@@ -1,5 +1,5 @@
 ---
-description: First-time setup. Creates your me.md and now.md through conversation.
+description: First-time setup. Fills in your About Me and Now sections through conversation.
 ---
 
 # Setup Life
@@ -46,107 +46,30 @@ First — what should I call you?"
 
 *Wait for answer.*
 
-### 6. The one question
+### 6. Confirm and update
 
-"What's one question that snaps you back to reality when you're avoiding something?"
+"Got it. Let me update your file."
 
-*If they don't know, suggest: "Something like 'Is this what I actually want, or what I think I should want?'"*
+## Update CLAUDE.md
 
-*Wait for answer.*
-
-### 7. Confirm and create
-
-"Got it. Let me set up your files."
-
-## Create the files
-
-### Create me.md
+Update the "About Me" section:
 
 ```markdown
-# Me
+## About Me
 
-> [Their name]'s file. Claude reads this to understand who you are.
-
----
-
-## Mission
-
-> '[Their mission in their words]'
-
-**Deadline:** [Their deadline]
-
----
-
-## What Gets in the Way
-
-[Their patterns, in their words]
-
----
-
-## How to Challenge Me
-
-**Style:** [Their preferred style]
-
-**The question that cuts through:**
-> "[Their question]"
-
----
-
-## Key Quotes
-
-*Claude adds important things you say here over time.*
-
----
-
-## The Uncomfortable Truth
-
-*This section fills in as we talk.*
-
----
-
-*This file grows through conversation. Your words stay yours.*
+- **Mission:** [Their mission in their words]
+- **How to challenge me:** [Their preferred style]
+- **Known patterns/bugs:** [Their patterns, in their words]
+- **What motivates me:** [Infer from conversation or ask]
 ```
 
-### Create now.md
+Update the "Now" section:
 
 ```markdown
-# Now
+## Now
 
-> Current focus. Claude updates this through conversation.
-
----
-
-**Mission:** [Their mission]
-
-**Deadline:** [Their deadline]
-
-**Days remaining:** [Calculate from today]
-
----
-
-## Current Mode: [Start with Planning or Recovery based on time of day]
-
-| Mode | Focus | Not Allowed |
-|------|-------|-------------|
-| Creative | Content, creating, building | Admin, job stuff |
-| Project | Building, shipping | New ideas, browsing |
-| Professional | Work, job hunt, clients | Side projects |
-| Planning | Think, decide next moves | Execution |
-| Recovery | Rest, recharge | Work decisions |
-
-*Say "switching to [mode]" to change*
-
----
-
-## MIT Today
-
-[Leave blank — they'll set this with /start-day]
-
----
-
-## Recent Wins
-
-*Wins get added here as they happen.*
+- **MIT:** [Leave blank — they'll set with /start-day]
+- **Active projects:** [Their mission/goal]
 ```
 
 ### Create journal folder
@@ -161,8 +84,8 @@ Create `journal/` directory if it doesn't exist.
 - `/check` — Anytime. Quick check-in.
 - `/end-day` — Evening. Capture what happened.
 
-The system learns about you as we talk. Your `me.md` will grow over time.
+The system learns about you as we talk. Your About Me section will grow over time.
 
 What's your one thing for today?"
 
-*If they answer, update now.md with their MIT and transition to normal mode.*
+*If they answer, update the Now section with their MIT and transition to normal mode.*

@@ -8,7 +8,7 @@ Read CLAUDE.md for full guidance.
 
 Run: `date '+%A %B %d, %Y %H:%M'`
 
-Read silently: now.md, me.md, recent journals.
+Read silently: CLAUDE.md ("About Me" and "Now" sections), recent journals.
 
 ## Ask
 
@@ -19,7 +19,7 @@ That's it. Wait.
 ## After they answer
 
 - Create/update journal (`journal/YYYY-MM-DD.md`)
-- Update now.md with their MIT
+- Update "Now" section in CLAUDE.md with their MIT
 
 Journal:
 ```markdown
@@ -35,7 +35,7 @@ Journal:
 
 ## Connect (if appropriate)
 
-If me.md has a mission, connect briefly:
+If "About Me" has a mission, connect briefly:
 "That moves you toward [their mission]."
 
 ## Close

@@ -8,7 +8,7 @@ Read CLAUDE.md for full guidance.
 
 Run: `date '+%A %B %d, %Y %H:%M'`
 
-Read silently: now.md, me.md, today's journal.
+Read silently: CLAUDE.md ("About Me" and "Now" sections), today's journal.
 
 ## Ask
 
@@ -35,8 +35,8 @@ See CLAUDE.md "Handling Key Situations" for full guidance.
 ## Update (if needed)
 
 Only if something changed:
-- now.md: new focus, blocker, win
-- me.md: new pattern (ask first)
+- "Now" section in CLAUDE.md: new focus, blocker, win
+- "About Me" section in CLAUDE.md: new pattern (ask first)
 - journal: notable moment
 
 ## Close

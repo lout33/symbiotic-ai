@@ -10,7 +10,7 @@ Run: `date '+%A %B %d, %Y %H:%M'`
 
 If before 6pm: "Closing out early?"
 
-Read silently: me.md, now.md, today's journal (if exists).
+Read silently: CLAUDE.md ("About Me" and "Now" sections), today's journal (if exists).
 
 ## Ask
 
@@ -48,7 +48,7 @@ Create journal/[date].md if it doesn't exist:
 
 If journal exists, update with evening data.
 
-Update now.md if:
+Update "Now" section in CLAUDE.md if:
 - Focus changed
 - Win worth noting
 - Blocker emerged
@@ -78,4 +78,4 @@ Short:
 If they said something important, quote it:
 > 'exact words'
 
-Ask: "Want me to save that to me.md?"
+Ask: "Want me to save that to the About Me section?"
