@@ -2,13 +2,13 @@
 description: Quick check-in anytime. Updates files, keeps you accountable.
 ---
 
-Read CLAUDE.md for full guidance.
+Read CLAUDE.md and NOW.md for full context.
 
 ## Context
 
 Run: `date '+%A %B %d, %Y %H:%M'`
 
-Read silently: CLAUDE.md ("About Me" and "Now" sections), today's journal.
+Read silently: CLAUDE.md (stable identity), NOW.md (current state), today's journal.
 
 ## Ask
 
@@ -17,8 +17,6 @@ Read silently: CLAUDE.md ("About Me" and "Now" sections), today's journal.
 Wait.
 
 ## Respond
-
-See CLAUDE.md "Handling Key Situations" for full guidance.
 
 **Quick reference:**
 
@@ -35,9 +33,9 @@ See CLAUDE.md "Handling Key Situations" for full guidance.
 ## Update (if needed)
 
 Only if something changed:
-- "Now" section in CLAUDE.md: new focus, blocker, win
-- "About Me" section in CLAUDE.md: new pattern (ask first)
-- journal: notable moment
+- **NOW.md**: Update MIT, add blocker to Actions, add Memory Log entry
+- **CLAUDE.md**: Only update if new long-term pattern discovered (rare)
+- **journal**: Note the check-in moment
 
 ## Close
 
