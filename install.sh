@@ -150,4 +150,18 @@ done
 rm -rf "$TMP_DIR"
 
 echo ""
-echo "Done! Run /setup-life to get started."
+echo "Done!"
+echo ""
+if [ "$TARGET_NAME" = "Claude Code" ]; then
+    echo "Next steps:"
+    echo "  1. Run: claude"
+    echo "  2. Inside Claude Code, run: /setup-life"
+elif [ "$TARGET_NAME" = "OpenCode" ]; then
+    echo "Next steps:"
+    echo "  1. Run: opencode"
+    echo "  2. Inside OpenCode, run: /setup-life"
+else
+    echo "Next steps:"
+    echo "  1. Open this directory with Claude Code or OpenCode"
+    echo "  2. Run: /setup-life"
+fi
