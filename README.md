@@ -1,6 +1,6 @@
 # Claude Life Assistant
 
-A personal coach that remembers, notices patterns, and holds you accountable.
+A symbiotic AI agent that remembers everything, acts autonomously, and extends your cognition.
 
 <a href="https://www.youtube.com/watch?v=cY3LvkB1EQM"><img src="https://i.ibb.co/Gvsg0L9C/image.png" alt="Claude Life Assistant Demo" border="0"></a>
     
@@ -8,21 +8,22 @@ A personal coach that remembers, notices patterns, and holds you accountable.
 
 ## What This Is
 
-A 2-file system that gives Claude:
-- **Memory** — Builds a log of insights about you over time
-- **Context** — Stable identity (CLAUDE.md) + dynamic state (NOW.md)
-- **Accountability** — Daily check-ins with pattern recognition
+A 2-file system that turns Claude into a symbiotic agent:
+- **Memory** — Persistent context across all sessions
+- **Autonomy** — Acts directly (code, files, research)
+- **Coordination** — Reads your identity, tracks your state, notices patterns
 
-**The key difference:** Claude notices what you can't see. The Memory Log tracks breakthroughs, quotes, and patterns across weeks/months.
+**The key difference:** Not a chatbot. An agent that lives in your filesystem, remembers your context, and operates alongside you.
 
 ## How It Works
 
 ```mermaid
 graph LR
-    A[You] -->|Conversation| B[Claude]
+    A[You] <-->|Symbiotic| B[Agent]
     B -->|Reads| C[CLAUDE.md<br/>Who you are]
     B -->|Reads| D[NOW.md<br/>Current state]
     B -->|Updates| E[Memory Log<br/>Patterns over time]
+    B -->|Acts| F[Code/Files/Research]
     E -.->|Part of| D
     
     style C fill:#2d3748,stroke:#4a5568,color:#fff
@@ -30,9 +31,10 @@ graph LR
     style E fill:#2d3748,stroke:#4a5568,color:#fff
     style A fill:#2d3748,stroke:#4a5568,color:#fff
     style B fill:#2d3748,stroke:#4a5568,color:#fff
+    style F fill:#2d3748,stroke:#4a5568,color:#fff
 ```
 
-**The Philosophy:** Trust through transparency. All memory lives in files you control. Claude builds context over time, you see everything it remembers.
+**The Philosophy:** Symbiotic AI through transparency. All memory lives in files you control. The agent builds context over time, acts autonomously, and you see everything it remembers.
 
 ## Installation
 
@@ -78,10 +80,17 @@ cp -r commands/* ~/.config/opencode/command/
 
 Run `/setup-life` to create your 2-file system. Takes 5 minutes.
 
+**The agent will:**
+1. Ask about your identity, mission, patterns
+2. Create `CLAUDE.md` (stable) + `NOW.md` (dynamic)
+3. Start tracking patterns from day one
+
 Then use:
-- `/start-day` — Morning kickoff
-- `/check-day` — Quick check-in
-- `/end-day` — Evening review + Memory Log update
+- `/start-day` — Morning kickoff, set MIT
+- `/check-day` — Quick check-in, course correct
+- `/end-day` — Evening review, log patterns
+
+**Between commands:** The agent has full context. Just talk. It remembers everything.
 
 ## The 2-File System
 
@@ -97,7 +106,7 @@ Separation = clarity. CLAUDE.md is your operating system. NOW.md is your current
 
 **Conversation > Documentation**
 
-You talk to Claude. Claude maintains the files. No manual file editing required.
+You talk. The agent acts and maintains the files. No manual editing required (though you can if you want).
 
 ## How It Works (Data Flow)
 
@@ -115,13 +124,13 @@ You talk to Claude. Claude maintains the files. No manual file editing required.
 
 ## The Memory Log (Secret Sauce)
 
-In `NOW.md`, Claude maintains a dated log:
+In `NOW.md`, the agent maintains a dated log:
 - Patterns it notices over time
 - Your exact words (quoted)
 - Breakthroughs and insights
 - Connections across conversations
 
-**This is what makes it different from a journal.** Claude sees patterns you miss.
+**This is what makes it symbiotic, not just a journal.** The agent sees patterns you miss, remembers what you forget, and acts on context you'd lose between sessions.
 
 Example progression:
 ```
@@ -205,6 +214,20 @@ Check `examples/` for real progressions:
 
 Each shows Week 1 → Month 3 evolution with Memory Log progression.
 
+## Who This Is For
+
+**You want AI that acts, not just chats:**
+- Developers building a life OS (not just a todo list)
+- Builders who want AI to DO things (code, research, execute)
+- People who think across sessions, not just conversations
+- Anyone tired of re-explaining context every time
+
+**You probably won't like this if:**
+- You want a simple chatbot (this is deeper integration)
+- You're uncomfortable with AI autonomy
+- You prefer apps over files
+- You don't want persistent memory
+
 ## Philosophy
 
 **Conversation > Documentation** — You talk, Claude maintains files
@@ -235,7 +258,7 @@ Interested in the full system? **Let me know** (feedback helps prioritize what t
 
 Created by [@lout33](https://github.com/lout33)
 
-Inspired by the belief that AI should help you become more yourself, not less.
+Built on the belief that symbiotic AI means shared cognition, not supervision. The agent operates with you, not for you.
 
 ---
 
