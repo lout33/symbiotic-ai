@@ -36,7 +36,17 @@ graph LR
 
 ## Installation
 
-### Option 1: Clone (Recommended)
+**One command:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/lout33/claude_life_assistant/main/install.sh | bash
+```
+
+Works with Claude Code, OpenCode, or as a local project. The script auto-detects your setup.
+
+### Manual Installation
+
+**Option 1: Clone**
 
 ```bash
 git clone https://github.com/lout33/claude_life_assistant
@@ -45,32 +55,22 @@ cd claude_life_assistant
 
 Then open with Claude Code and run `/setup-life`.
 
-### Option 2: Include in Existing Project
-
-Copy `CLAUDE.md` and `NOW.md` templates into your project root. Claude will read them automatically.
-
-## Global Installation (Use Across All Projects)
-
-Want to use Claude Life Assistant across all your projects without committing personal files to each repo?
-
-**Claude Code users** — Your `~/.claude/` folder already exists. Just copy files:
+**Option 2: Global Install (Claude Code)**
 
 ```bash
 cp CLAUDE.md NOW.md ~/.claude/
 mkdir -p ~/.claude/commands
-cp -r .claude/commands/* ~/.claude/commands/
+cp -r commands/* ~/.claude/commands/
 ```
 
-**OpenCode users** — Your `~/.config/opencode/` folder exists. Just copy files:
+**Option 3: Global Install (OpenCode)**
 
 ```bash
 cp CLAUDE.md ~/.config/opencode/AGENTS.md
 cp NOW.md ~/.config/opencode/
 mkdir -p ~/.config/opencode/command
-cp -r .claude/commands/* ~/.config/opencode/command/
+cp -r commands/* ~/.config/opencode/command/
 ```
-
-**Other AI agents** — Most look for instruction files in project root or global config. Check your tool's docs and place files there.
 
 ## Quick Start
 
