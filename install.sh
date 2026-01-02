@@ -22,7 +22,6 @@ mkdir -p "$TMP_DIR/commands"
 # Download files
 curl -fsSL "$REPO_URL/CLAUDE.md" -o "$TMP_DIR/CLAUDE.md"
 curl -fsSL "$REPO_URL/NOW.md" -o "$TMP_DIR/NOW.md"
-curl -fsSL "$REPO_URL/commands/setup-life.md" -o "$TMP_DIR/commands/setup-life.md"
 curl -fsSL "$REPO_URL/commands/start-day.md" -o "$TMP_DIR/commands/start-day.md"
 curl -fsSL "$REPO_URL/commands/check-day.md" -o "$TMP_DIR/commands/check-day.md"
 curl -fsSL "$REPO_URL/commands/end-day.md" -o "$TMP_DIR/commands/end-day.md"
@@ -169,7 +168,7 @@ else
     echo -e "${GREEN}✓ Copied NOW.md${NC}"
 fi
 
-# Copy commands (skip setup-life, it's optional now)
+# Copy commands
 for cmd in start-day check-day end-day; do
     TARGET_CMD="$COMMANDS_DIR/$cmd.md"
     if [ -f "$TARGET_CMD" ]; then
