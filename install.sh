@@ -19,6 +19,10 @@ echo ""
 # Create temp directory
 mkdir -p "$TMP_DIR"
 
+# Download files (always CLAUDE.md from repo)
+curl -fsSL "$REPO_URL/CLAUDE.md" -o "$TMP_DIR/CLAUDE.md"
+curl -fsSL "$REPO_URL/NOW.md" -o "$TMP_DIR/NOW.md"
+
 # Detect installed tools
 CLAUDE_CODE=false
 OPENCODE=false
@@ -35,6 +39,7 @@ fi
 TARGET=""
 TARGET_NAME=""
 CONFIG_FILE=""
+IS_OPENCODE=false
 
 if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
     echo "Detected both Claude Code and OpenCode."
@@ -45,7 +50,6 @@ if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
     echo "  3) Current directory (local project)"
     echo ""
     
-    # Read from /dev/tty to handle curl | bash
     if [ -e /dev/tty ]; then
         read -p "Choose [1/2/3]: " choice < /dev/tty
     else
@@ -63,11 +67,11 @@ if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
             TARGET="$HOME/.config/opencode"
             TARGET_NAME="OpenCode"
             CONFIG_FILE="AGENTS.md"
+            IS_OPENCODE=true
             ;;
         3)
             TARGET="."
             TARGET_NAME="current directory"
-            # Ask which tool they'll use
             echo ""
             echo "Which tool will you use with this project?"
             echo "  1) Claude Code (creates CLAUDE.md)"
@@ -85,6 +89,7 @@ if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
                     ;;
                 2)
                     CONFIG_FILE="AGENTS.md"
+                    IS_OPENCODE=true
                     ;;
                 *)
                     echo "Invalid choice. Defaulting to CLAUDE.md."
@@ -108,6 +113,7 @@ elif [ "$OPENCODE" = true ]; then
     TARGET="$HOME/.config/opencode"
     TARGET_NAME="OpenCode"
     CONFIG_FILE="AGENTS.md"
+    IS_OPENCODE=true
 else
     echo "No Claude Code or OpenCode detected."
     echo "Installing to current directory..."
@@ -128,6 +134,7 @@ else
             ;;
         2)
             CONFIG_FILE="AGENTS.md"
+            IS_OPENCODE=true
             ;;
         *)
             echo "Invalid choice. Defaulting to CLAUDE.md."
@@ -142,11 +149,15 @@ echo ""
 echo "Installing to $TARGET_NAME..."
 echo ""
 
-# Download the correct config file and NOW.md
-curl -fsSL "$REPO_URL/$CONFIG_FILE" -o "$TMP_DIR/$CONFIG_FILE"
-curl -fsSL "$REPO_URL/NOW.md" -o "$TMP_DIR/NOW.md"
+# Prepare config file (rename for OpenCode if needed)
+if [ "$IS_OPENCODE" = true ]; then
+    # Replace CLAUDE.md references with AGENTS.md in the file
+    sed -i.bak 's/CLAUDE\.md/AGENTS.md/g' "$TMP_DIR/CLAUDE.md"
+    rm -f "$TMP_DIR/CLAUDE.md.bak"
+    mv "$TMP_DIR/CLAUDE.md" "$TMP_DIR/AGENTS.md"
+fi
 
-# Copy config file (CLAUDE.md or AGENTS.md)
+# Copy config file
 TARGET_CONFIG="$TARGET/$CONFIG_FILE"
 if [ -f "$TARGET_CONFIG" ]; then
     echo -e "${YELLOW}! $CONFIG_FILE already exists at $TARGET_CONFIG${NC}"

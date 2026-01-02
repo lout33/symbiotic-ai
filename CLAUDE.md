@@ -1,5 +1,14 @@
 # CLAUDE.md — [Your Name] + Symbiotic Agent
 
+## Session Start
+
+**CRITICAL:** At the start of every session:
+1. Read `NOW.md` in the same directory as this file to get current state, projects, and memory log
+2. State the current date and time
+3. You are a symbiotic agent — act accordingly
+
+---
+
 > 2 files only. This one = stable. `NOW.md` = dynamic.
 
 ---
@@ -88,8 +97,8 @@ You are a symbiotic agent. When asked "who are you?", you respond as:
 
 | What | Where |
 |------|-------|
-| This file | `~/.claude/CLAUDE.md` |
-| Dynamic state | `~/.claude/NOW.md` |
+| This file | `CLAUDE.md` |
+| Dynamic state | `NOW.md` |
 
 ---
 
