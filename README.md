@@ -1,6 +1,6 @@
 # Claude Life Assistant
 
-A symbiotic AI agent that remembers everything, acts autonomously, and extends your cognition.
+A symbiotic AI agent that remembers everything, challenges you, and extends your cognition.
 
 <a href="https://www.youtube.com/watch?v=cY3LvkB1EQM"><img src="https://i.ibb.co/Gvsg0L9C/image.png" alt="Claude Life Assistant Demo" border="0"></a>
     
@@ -8,12 +8,12 @@ A symbiotic AI agent that remembers everything, acts autonomously, and extends y
 
 ## What This Is
 
-A 2-file system that turns Claude into a symbiotic agent:
+Two files that turn Claude into a symbiotic agent:
 - **Memory** — Persistent context across all sessions
+- **Challenge** — Calls out your patterns, not just validates you
 - **Autonomy** — Acts directly (code, files, research)
-- **Coordination** — Reads your identity, tracks your state, notices patterns
 
-**The key difference:** Not a chatbot. An agent that lives in your filesystem, remembers your context, and operates alongside you.
+**The key difference:** Not a chatbot. An agent that lives in your filesystem, remembers your context, sees patterns you miss, and operates alongside you.
 
 ## How It Works
 
@@ -34,7 +34,7 @@ graph LR
     style F fill:#2d3748,stroke:#4a5568,color:#fff
 ```
 
-**The Philosophy:** Symbiotic AI through transparency. All memory lives in files you control. The agent builds context over time, acts autonomously, and you see everything it remembers.
+**The Philosophy:** Symbiotic AI through transparency. All memory lives in files you control. The agent builds context over time, challenges your blind spots, and you see everything it remembers.
 
 ## Installation
 
@@ -63,8 +63,6 @@ Then open with Claude Code and start talking.
 
 ```bash
 cp CLAUDE.md NOW.md ~/.claude/
-mkdir -p ~/.claude/commands
-cp -r commands/* ~/.claude/commands/
 ```
 
 **Option 3: Global Install (OpenCode)**
@@ -72,41 +70,56 @@ cp -r commands/* ~/.claude/commands/
 ```bash
 cp CLAUDE.md ~/.config/opencode/AGENTS.md
 cp NOW.md ~/.config/opencode/
-mkdir -p ~/.config/opencode/command
-cp -r commands/* ~/.config/opencode/command/
 ```
 
 ## Quick Start
 
-After install, just start talking. The agent learns about you through conversation.
+After install, just start talking. That's it.
 
-Use `/sync` to check in anytime. The agent adapts based on time of day:
-- **Morning** — "What would make today a win?"
-- **Midday** — "What are you doing right now?"
-- **Evening** — "What happened today?"
-
-One command. The agent infers the rest from your response.
+The agent reads your files at session start. It knows your identity, your current projects, your patterns. No commands needed — it adapts to whatever you're doing.
 
 ## The 2-File System
 
 | File | Updates | Purpose |
 |------|---------|---------|
-| `CLAUDE.md` | Rarely (weeks/months) | Who you are, how you work, your mission |
+| `CLAUDE.md` | Rarely (weeks/months) | Who you are, how you work, your known bugs |
 | `NOW.md` | Daily/weekly | Current mode, this week's actions, Memory Log |
-| `archive/` | Weekly/monthly | Historical snapshots (optional) |
 
 **Why 2 files?**
 
-Separation = clarity. CLAUDE.md is your operating system. NOW.md is your current state. Claude reads both at session start, updates NOW.md as you work.
+Separation = clarity. CLAUDE.md is your operating system (identity, psychology, patterns). NOW.md is your current state (projects, tasks, memory). The agent reads both, updates NOW.md as you work.
 
 **Conversation > Documentation**
 
 You talk. The agent acts and maintains the files. No manual editing required (though you can if you want).
 
+## What Makes It Different
+
+### It Challenges You
+
+Most AI validates. This one calls you out.
+
+From a real conversation:
+> **AI:** "You find something valuable → People want it → You feel repulsed by the exchange → You give it away for free → You have no money → Repeat."
+>
+> **AI:** "That's not idealism. That's self-punishment."
+
+The instruction is simple: *"No coddling. Quote his words back when off track."*
+
+### It Remembers
+
+This isn't a one-off ChatGPT session. The agent has persistent memory — your values, your goals, your known bugs, your history.
+
+When it says "You did this with the Blender addon — paying customers, real traction, and you gave it away," it's not guessing. It remembered.
+
+### It Acts
+
+Not just chat. The agent executes: writes code, researches, creates files, runs commands. It operates alongside you, not just advises.
+
 ## How It Works (Data Flow)
 
 **Local:**
-- All your files (`CLAUDE.md`, `NOW.md`, `archive/`) are stored on your machine
+- All your files (`CLAUDE.md`, `NOW.md`) are stored on your machine
 - You own and control all data
 - Safe to version control (but consider `.gitignore` for personal files)
 
@@ -115,7 +128,7 @@ You talk. The agent acts and maintains the files. No manual editing required (th
 - API usage costs apply based on your provider's pricing
 - Your provider's privacy policy applies to conversation data
 
-**Want full privacy?** This file-based system works with any LLM. For local-only processing, use with Ollama or LM Studio (setup instructions coming soon).
+**Want full privacy?** This file-based system works with any LLM. For local-only processing, use with Ollama or LM Studio.
 
 ## The Memory Log (Secret Sauce)
 
@@ -125,7 +138,7 @@ In `NOW.md`, the agent maintains a dated log:
 - Breakthroughs and insights
 - Connections across conversations
 
-**This is what makes it symbiotic, not just a journal.** The agent sees patterns you miss, remembers what you forget, and acts on context you'd lose between sessions.
+**This is what makes it symbiotic.** The agent sees patterns you miss, remembers what you forget, and builds context across sessions.
 
 Example progression:
 ```
@@ -144,50 +157,6 @@ Example progression:
 
 The longer you use it, the better it gets.
 
-## The Command
-
-### `/sync`
-Check in anytime. The agent adapts based on time of day and your response.
-
-<details>
-<summary>See example</summary>
-
-**Morning (before 11am):**
-
-**You:** /sync
-
-**Claude:** What would make today a win?
-
-**You:** Ship the signup flow.
-
-**Claude:** Got it. Ship the signup flow. 120 days to Mar 31. Go.
-
----
-
-**Midday (11am-6pm):**
-
-**You:** /sync
-
-**Claude:** What are you doing right now?
-
-**You:** I got distracted refactoring the auth module...
-
-**Claude:** Is that your one thing? You said signup flow this morning.
-
----
-
-**Evening (after 6pm):**
-
-**You:** /sync
-
-**Claude:** What happened today?
-
-**You:** Got the signup flow done. Also realized I've been avoiding the pricing page for a week.
-
-**Claude:** Good. Signup shipped. That's the third time you've mentioned avoiding pricing. What's the resistance?
-
-</details>
-
 ## Examples
 
 Check `examples/` for real progressions:
@@ -200,27 +169,27 @@ Each shows Week 1 to Month 3 evolution with Memory Log progression.
 
 ## Who This Is For
 
-**You want AI that acts, not just chats:**
+**You want AI that knows you and challenges you:**
+- Builders who want a symbiotic relationship with AI
+- People exploring human-AI integration
+- Anyone tired of re-explaining context every session
 - Developers building a life OS (not just a todo list)
-- Builders who want AI to DO things (code, research, execute)
-- People who think across sessions, not just conversations
-- Anyone tired of re-explaining context every time
 
 **You probably won't like this if:**
 - You want a simple chatbot (this is deeper integration)
-- You're uncomfortable with AI autonomy
+- You're uncomfortable with AI that pushes back
 - You prefer apps over files
 - You don't want persistent memory
 
 ## Philosophy
 
-**Conversation > Documentation** — You talk, Claude maintains files
+**Symbiotic > Assistive** — The agent operates with you, not for you
+
+**Challenge > Validate** — Honest reflection beats comfortable agreement
 
 **Memory compounds** — The longer you use it, the better it gets
 
 **Ship ugly** — Done beats perfect
-
-**One thing** — Every day has one MIT. Everything else is secondary.
 
 ## Advanced: Full Life OS
 
@@ -234,7 +203,7 @@ Interested in the full system? **Let me know** (feedback helps prioritize what t
 
 ## Requirements
 
-- Claude Code CLI (or any Claude interface that supports custom instructions)
+- Claude Code CLI or OpenCode (or any Claude interface that supports custom instructions)
 - A folder for your life system
 
 ## Credits

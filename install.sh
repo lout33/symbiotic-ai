@@ -17,12 +17,11 @@ echo "Downloading Claude Life Assistant..."
 echo ""
 
 # Create temp directory
-mkdir -p "$TMP_DIR/commands"
+mkdir -p "$TMP_DIR"
 
 # Download files
 curl -fsSL "$REPO_URL/CLAUDE.md" -o "$TMP_DIR/CLAUDE.md"
 curl -fsSL "$REPO_URL/NOW.md" -o "$TMP_DIR/NOW.md"
-curl -fsSL "$REPO_URL/commands/sync.md" -o "$TMP_DIR/commands/sync.md"
 
 # Detect installed tools
 CLAUDE_CODE=false
@@ -39,7 +38,6 @@ fi
 # Determine install target
 TARGET=""
 TARGET_NAME=""
-COMMANDS_DIR=""
 CLAUDE_FILE=""
 
 if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
@@ -63,19 +61,16 @@ if [ "$CLAUDE_CODE" = true ] && [ "$OPENCODE" = true ]; then
         1)
             TARGET="$HOME/.claude"
             TARGET_NAME="Claude Code"
-            COMMANDS_DIR="$TARGET/commands"
             CLAUDE_FILE="CLAUDE.md"
             ;;
         2)
             TARGET="$HOME/.config/opencode"
             TARGET_NAME="OpenCode"
-            COMMANDS_DIR="$TARGET/command"
             CLAUDE_FILE="AGENTS.md"
             ;;
         3)
             TARGET="."
             TARGET_NAME="current directory"
-            COMMANDS_DIR="./commands"
             CLAUDE_FILE="CLAUDE.md"
             ;;
         *)
@@ -88,29 +83,23 @@ elif [ "$CLAUDE_CODE" = true ]; then
     echo "Detected: Claude Code (~/.claude/)"
     TARGET="$HOME/.claude"
     TARGET_NAME="Claude Code"
-    COMMANDS_DIR="$TARGET/commands"
     CLAUDE_FILE="CLAUDE.md"
 elif [ "$OPENCODE" = true ]; then
     echo "Detected: OpenCode (~/.config/opencode/)"
     TARGET="$HOME/.config/opencode"
     TARGET_NAME="OpenCode"
-    COMMANDS_DIR="$TARGET/command"
     CLAUDE_FILE="AGENTS.md"
 else
     echo "No Claude Code or OpenCode detected."
     echo "Installing to current directory..."
     TARGET="."
     TARGET_NAME="current directory"
-    COMMANDS_DIR="./commands"
     CLAUDE_FILE="CLAUDE.md"
 fi
 
 echo ""
 echo "Installing to $TARGET_NAME..."
 echo ""
-
-# Create commands directory if needed
-mkdir -p "$COMMANDS_DIR"
 
 # Copy CLAUDE.md (or AGENTS.md for OpenCode)
 TARGET_CLAUDE="$TARGET/$CLAUDE_FILE"
@@ -129,7 +118,6 @@ else
 |------|-------|
 | This file | `~/.claude/CLAUDE.md` |
 | Dynamic state | `~/.claude/NOW.md` |
-| Commands | `~/.claude/commands/` |
 EOF
     elif [ "$TARGET_NAME" = "OpenCode" ]; then
         cat >> "$TARGET_CLAUDE" << 'EOF'
@@ -139,7 +127,6 @@ EOF
 |------|-------|
 | This file | `~/.config/opencode/AGENTS.md` |
 | Dynamic state | `~/.config/opencode/NOW.md` |
-| Commands | `~/.config/opencode/command/` |
 EOF
     else
         cat >> "$TARGET_CLAUDE" << 'EOF'
@@ -149,7 +136,6 @@ EOF
 |------|-------|
 | This file | `./CLAUDE.md` |
 | Dynamic state | `./NOW.md` |
-| Commands | `./commands/` |
 EOF
     fi
     
@@ -166,17 +152,6 @@ else
     echo -e "${GREEN}✓ Copied NOW.md${NC}"
 fi
 
-# Copy commands
-for cmd in sync; do
-    TARGET_CMD="$COMMANDS_DIR/$cmd.md"
-    if [ -f "$TARGET_CMD" ]; then
-        echo -e "${YELLOW}! Skipping $cmd, already exists${NC}"
-    else
-        cp "$TMP_DIR/commands/$cmd.md" "$TARGET_CMD"
-        echo -e "${GREEN}✓ Copied command: $cmd${NC}"
-    fi
-done
-
 # Cleanup temp files
 rm -rf "$TMP_DIR"
 
@@ -187,13 +162,14 @@ echo ""
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-echo "Your system is ready."
+echo "Your symbiotic agent is ready."
 echo ""
-echo "How it works:"
-echo "  /sync  — Check in anytime. Agent adapts to time of day."
+echo "Two files power the system:"
+echo "  $CLAUDE_FILE  — Your identity, psychology, patterns"
+echo "  NOW.md        — Current state, projects, memory log"
 echo ""
-echo "The agent learns about you through conversation."
-echo "No setup required — just start talking."
+echo "The agent reads both at session start."
+echo "Just start talking. It already knows you."
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
