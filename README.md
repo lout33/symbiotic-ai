@@ -49,6 +49,29 @@ Then open with Claude Code and run `/setup-life`.
 
 Copy `CLAUDE.md` and `NOW.md` templates into your project root. Claude will read them automatically.
 
+## Global Installation (Use Across All Projects)
+
+Want to use Claude Life Assistant across all your projects without committing personal files to each repo?
+
+**Claude Code users** — Your `~/.claude/` folder already exists. Just copy files:
+
+```bash
+cp CLAUDE.md NOW.md ~/.claude/
+mkdir -p ~/.claude/commands
+cp -r .claude/commands/* ~/.claude/commands/
+```
+
+**OpenCode users** — Your `~/.config/opencode/` folder exists. Just copy files:
+
+```bash
+cp CLAUDE.md ~/.config/opencode/AGENTS.md
+cp NOW.md ~/.config/opencode/
+mkdir -p ~/.config/opencode/command
+cp -r .claude/commands/* ~/.config/opencode/command/
+```
+
+**Other AI agents** — Most look for instruction files in project root or global config. Check your tool's docs and place files there.
+
 ## Quick Start
 
 Run `/setup-life` to create your 2-file system. Takes 5 minutes.
@@ -73,6 +96,20 @@ Separation = clarity. CLAUDE.md is your operating system. NOW.md is your current
 **Conversation > Documentation**
 
 You talk to Claude. Claude maintains the files. No manual file editing required.
+
+## How It Works (Data Flow)
+
+**Local:**
+- All your files (`CLAUDE.md`, `NOW.md`, journal) are stored on your machine
+- You own and control all data
+- Safe to version control (but consider `.gitignore` for personal files)
+
+**Cloud:**
+- Conversations are processed through your AI provider's API (Anthropic, OpenAI, etc.)
+- API usage costs apply based on your provider's pricing
+- Your provider's privacy policy applies to conversation data
+
+**Want full privacy?** This file-based system works with any LLM. For local-only processing, use with Ollama or LM Studio (setup instructions coming soon).
 
 ## The Memory Log (Secret Sauce)
 
@@ -176,16 +213,16 @@ Each shows Week 1 → Month 3 evolution with Memory Log progression.
 
 **One thing** — Every day has one MIT. Everything else is secondary.
 
-## Upgrading from v1?
+## Advanced: Full Life OS
 
-If you're using the old single-file system:
+This template covers the basics. My personal setup includes:
 
-1. Backup your old `CLAUDE.md`
-2. Pull latest changes: `git pull origin main`
-3. Run `/setup-life` to create the new 2-file system
-4. Copy any important patterns from your backup into the new files
+- **Skills ecosystem** — Search, research, image generation, and more
+- **Agent delegation** — Spawn sub-agents for complex tasks
+- **Integrated journal** — Daily entries with AI pattern recognition
+- **Custom commands** — Rituals for `/start-day`, `/check-day`, `/end-day`
 
-**Or start fresh:** Delete your old file and run `/setup-life`. The new system is better.
+Interested in the full system? **Let me know** (feedback helps prioritize what to build next).
 
 ## Requirements
 
@@ -201,3 +238,11 @@ Inspired by the belief that AI should help you become more yourself, not less.
 ---
 
 *"The solution isn't a better system. It's doing the uncomfortable thing you're avoiding."*
+
+---
+
+![GitHub stars](https://img.shields.io/github/stars/lout33/claude_life_assistant?style=social)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=lout33/claude_life_assistant&type=Date)](https://star-history.com/#lout33/claude_life_assistant&Date)
