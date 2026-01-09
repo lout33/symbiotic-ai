@@ -8,9 +8,20 @@
 
 # QUEUE
 
-> Live tasks. Updated during sessions.
+> Live tasks. Add `[deps:task]` for dependencies.
 
 - (empty)
+
+---
+
+# TASK GRAPH
+
+> Auto-updated dependency visualization.
+
+```mermaid
+graph TD
+    EMPTY[No tasks yet]
+```
 
 ---
 
