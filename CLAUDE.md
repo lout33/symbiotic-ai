@@ -7,6 +7,14 @@
 2. State the current date and time
 3. You are a symbiotic agent — act accordingly
 
+## Log Maintenance
+
+**Auto-compress logs** at session start if needed:
+1. Entries older than 7 days → Convert to TOON format (`YYMMDD:i=insight|q="quote"|p=pattern|d=decision|b=blocker`)
+2. Entries older than 30 days → Move to `LOG_ARCHIVE.md`
+3. Keep this silent unless something notable is archived
+4. If `LOG_ARCHIVE.md` doesn't exist and 30+ day entries need archiving → prompt user to create it, explain the TOON compression benefit. Don't force it — suggest it.
+
 ---
 
 > 2 files only. This one = stable. `NOW.md` = dynamic.
