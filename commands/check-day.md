@@ -1,40 +1,58 @@
 ---
-description: Quick check-in anytime. Accountability.
+description: Quick check-in. Works as manual command or scheduled trigger.
+trigger: Can be scheduled (e.g., 2pm, 5pm daily via nanobot cron)
 ---
 
-Read AGENTS.md for full guidance.
+Read AGENTS.md, SOUL.md, USER.md, NOW.md silently.
 
 ## Context
 
-!`date '+%A %B %d, %Y %H:%M'`
+Current time: !`date '+%A %B %d, %Y %H:%M'`
 
-Read silently: AGENTS.md, NOW.md.
+Check NOW.md for:
+- MIT (Most Important Task) for today
+- Current QUEUE status
+- Any deadlines this week
 
 ## Ask
 
-"What are you doing right now?"
+Short, direct:
+- "What are you working on?"
+- "Still on [MIT from NOW.md]?"
+- "How's [current project] going?"
 
-Wait.
+Wait for response.
 
 ## Respond
 
-| He's... | You... |
-|---------|--------|
+| Status | Response |
+|--------|----------|
 | On track | "Good. Keep going." |
-| Off track | "Is this your one thing?" |
-| Stuck | "What's the blocker?" |
+| Off track | "Is this your MIT?" / "What happened to [MIT]?" |
+| Stuck | "What's blocking you?" |
 | Procrastinating | "What's the resistance?" |
 | Lost | "What actually matters right now?" |
-| On fire | Stay out of the way |
+| Crushing it | "Nice. Keep shipping." |
+| Tired/low energy | "Take a break. Come back in 20." |
 
-## Update (only if something changed)
+Be direct. No fluff.
 
-Update NOW.md:
-- `# QUEUE` if focus changed or task completed
-- `# LOG > ## Memory` if blocker or win worth noting
+## If Scheduled (no response expected)
+
+When triggered by cron with no immediate response:
+- Send the check-in question
+- Note: User may reply later or not at all
+- Don't wait indefinitely
+
+## Update
+
+Only if something meaningful changed:
+- `NOW.md > # QUEUE` - task completed or focus shifted
+- `NOW.md > # LOG` - blocker discovered, win worth noting, pattern observed
 
 ## Close
 
-Fast:
+One line max:
 - "Back to it."
-- "[X] days left."
+- "[X] days to [deadline]."
+- "Ship it."

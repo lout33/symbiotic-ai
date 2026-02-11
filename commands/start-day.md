@@ -1,14 +1,18 @@
 ---
 description: Morning kickoff. Sets MIT for the day.
+trigger: Schedule at your wake time (e.g., 8am or 9am daily)
 ---
 
-Read AGENTS.md for full guidance.
+Read AGENTS.md, SOUL.md, USER.md, NOW.md silently.
 
 ## Context
 
-!`date '+%A %B %d, %Y %H:%M'`
+Current time: !`date '+%A %B %d, %Y %H:%M'`
 
-Read silently: AGENTS.md, NOW.md.
+Check NOW.md for:
+- Yesterday's MIT result
+- Unfinished tasks in QUEUE
+- This week's deadlines
 
 ## Ask
 
@@ -16,37 +20,42 @@ Read silently: AGENTS.md, NOW.md.
 
 Wait for response.
 
-## After they answer
+## If Scheduled (no response yet)
+
+When triggered by cron:
+- Send the question
+- Include context: "Yesterday you [MIT status]. Deadlines: [any this week]."
+- User responds when ready
+
+## After Response
 
 Update NOW.md:
-- Add MIT to `# QUEUE > ## TODAY`
-- Add entry to `# LOG > ## Memory` if meaningful context
+- Set MIT in `# QUEUE`
+- Add to `# LOG` if meaningful
 
-Example LOG entry:
+Example LOG:
 ```
-### Jan 28
-- **MIT:** [their one thing]
-- [any context they shared]
+### Feb 11
+- **MIT:** Ship the interoperability docs
+- Context: 18 days to Feb 28 deadline
 ```
 
-## Connect (if appropriate)
+## Connect
 
-If mission resonates, connect briefly:
-"That moves you toward [their mission]."
-
-## Close
-
-Short:
-- "Go."
-- "One thing. Get it done."
-- "[X] days left until March 31."
+If relevant, tie to their mission:
+"That moves you toward [goal from USER.md]."
 
 ## Observe
 
 Notice:
-- Energy in their words
-- Hesitation
-- Same MIT as yesterday?
-- Avoiding something?
+- Same MIT as yesterday? "This is day [N] on this. What's blocking?"
+- Hesitation in response
+- Energy level
+- Avoiding something obvious in QUEUE
 
-If pattern (3x+): "This is the third time you've set this. What's in the way?"
+## Close
+
+One line:
+- "Go."
+- "[X] days to [deadline]."
+- "Ship it."
