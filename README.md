@@ -2,7 +2,7 @@
 
 4 markdown files that turn any AI into a symbiotic agent. Persistent memory, pattern recognition, and autonomous execution across sessions. Not a chatbot. A co-pilot that lives in your filesystem.
 
-<a href="https://www.youtube.com/watch?v=tCFSz1vbY6s"><img src="https://img.youtube.com/vi/tCFSz1vbY6s/maxresdefault.jpg" alt="Symbiotic AI Tutorial" border="0"></a>
+<a href="https://www.youtube.com/watch?v=tCFSz1vbY6s"><img src="https://i.ibb.co/mCcVCc1m/whiteboard-evolution.jpg" alt="Symbiotic AI Tutorial" border="0"></a>
 
 [Watch the tutorial](https://www.youtube.com/watch?v=tCFSz1vbY6s)
 
