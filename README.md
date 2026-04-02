@@ -19,6 +19,13 @@ The system is simple on purpose: a small set of files that turns one useful sess
 
 The agent reads all 4 at session start. Updates NOW.md as you work. The system gets smarter the longer you use it -- not because of AI improvements, but because the files accumulate real context about you.
 
+Want to scale beyond one main agent? See the **[Multi-Agent Hierarchy Guide](guides/multi-agent-hierarchy.md)** for a simple human -> orchestrator -> leads -> specialists pattern.
+
+## Guides
+
+- **[Multi-Agent Hierarchy Guide](guides/multi-agent-hierarchy.md)** -- run a human -> orchestrator -> leads -> specialists system without losing clarity
+- **[HEARTBEAT Setup Guide](guides/heartbeat-setup.md)** -- add screen-aware accountability through OpenClaw, Telegram, and what-did-i-do
+
 ## What Makes It Different
 
 **It challenges you.** From a real conversation:
