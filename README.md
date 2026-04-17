@@ -42,7 +42,7 @@ Want to scale beyond one main agent? See the **[Multi-Agent Hierarchy Guide](gui
 
 ## Installation
 
-**Try without installing:** [Personal AI Hub](https://github.com/lout33/personal-ai-hub) — chat-based setup that generates your files in minutes, no terminal needed.
+**Try without installing:** [Personal AI Hub](https://symbiotic.makestudio.app/) — chat-based setup that generates your files in minutes, no terminal needed.
 
 ### Hermes Agent (recommended)
 
