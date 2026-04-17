@@ -1,5 +1,7 @@
 # Symbiotic AI
 
+Symbiotic AI is a reference implementation of [AI for better thinking loops](https://global-ai-hub-mu.vercel.app) — a category built around the claim that AI can help people think better in ways that survive commitment, action, and review. See proof, methods, and adjacent workflows at the [Global AI Hub](https://global-ai-hub-mu.vercel.app).
+
 Turn one conversation into a clear next step and a system you can keep using. Symbiotic AI gives any model a durable way to carry your context, commitments, and current direction across sessions.
 
 <a href="https://www.youtube.com/watch?v=tCFSz1vbY6s"><img src="https://i.ibb.co/mCcVCc1m/whiteboard-evolution.jpg" alt="Symbiotic AI Tutorial" border="0"></a>
@@ -39,6 +41,8 @@ Want to scale beyond one main agent? See the **[Multi-Agent Hierarchy Guide](gui
 **It evolves.** After 100+ sessions, your files contain hard-won insights about what works for you specifically. No generic advice. Your patterns, your bugs, your wins.
 
 ## Installation
+
+**Try without installing:** [Personal AI Hub](https://github.com/lout33/personal-ai-hub) — chat-based setup that generates your files in minutes, no terminal needed.
 
 ### Hermes Agent (recommended)
 

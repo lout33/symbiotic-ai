@@ -18,7 +18,7 @@ When user says "archive logs" or similar:
 
 > Core files: `SOUL.md` = agent identity | `USER.md` = user profile | `AGENTS.md` = operations | `NOW.md` = dynamic state
 
-> Optional files: `LOG_ARCHIVE.md` = history | `IDEAS.md` = idea capture | `COMMITMENTS.md` = said vs did
+> Optional files: `COMMITMENTS.md` = said vs did | `LOG_ARCHIVE.md` = history | `IDEAS.md` = idea capture
 
 ---
 
@@ -156,11 +156,16 @@ Still true? Still acting on it?
 | Dynamic state | `NOW.md` |
 | Evidence of progress | `LOG_ARCHIVE.md` (optional) |
 
-### Optional Files
+### Tier-1 Optional Files
+| File | Purpose |
+|------|---------|
+| `COMMITMENTS.md` | Said vs Did tracking (surface patterns when missed 3+ times) |
+| `LOG_ARCHIVE.md` | Archive weekly logs so `NOW.md` stays operational |
+
+### Other Optional Files
 | File | Purpose |
 |------|---------|
 | `IDEAS.md` | Capture ideas on the fly |
-| `COMMITMENTS.md` | Said vs Did tracking (surface patterns when missed 3+ times) |
 
 ---
 

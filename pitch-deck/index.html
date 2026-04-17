@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbiotic AI Pitch Deck</title>
+    <style>
+      :root {
+        --bg: #08111f;
+        --panel: rgba(9, 18, 34, 0.72);
+        --panel-strong: rgba(10, 18, 35, 0.9);
+        --line: rgba(151, 179, 255, 0.18);
+        --text: #f6f8fc;
+        --muted: #a7b3cb;
+        --blue: #82a4ff;
+        --cyan: #78e7ff;
+        --teal: #5fe3c4;
+        --gold: #ffd57a;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: #040916;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, rgba(87, 126, 255, 0.18), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(71, 214, 255, 0.12), transparent 24%),
+          #040916;
+      }
+
+      main {
+        width: min(1400px, calc(100vw - 48px));
+        margin: 0 auto;
+        padding: 32px 0 72px;
+      }
+
+      .slide {
+        position: relative;
+        min-height: 100vh;
+        padding: 42px;
+        margin-bottom: 28px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(180deg, rgba(10, 20, 38, 0.78), rgba(4, 10, 20, 0.92)),
+          #08111f;
+        box-shadow: var(--shadow);
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(130, 164, 255, 0.07), transparent 48%, rgba(95, 227, 196, 0.06));
+        pointer-events: none;
+      }
+
+      .slide > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 900px;
+        margin-bottom: 16px;
+        font-size: clamp(54px, 8vw, 94px);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        max-width: 900px;
+        margin-bottom: 18px;
+        font-size: clamp(34px, 4.4vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        letter-spacing: -0.03em;
+      }
+
+      p,
+      li {
+        font-size: clamp(18px, 2vw, 26px);
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      .lede {
+        max-width: 840px;
+        font-size: clamp(22px, 2.5vw, 34px);
+        line-height: 1.3;
+        color: #eaf0ff;
+      }
+
+      ul {
+        padding-left: 1.2em;
+      }
+
+      li + li {
+        margin-top: 12px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        padding: 22px;
+        border: 1px solid rgba(140, 168, 245, 0.16);
+        border-radius: 22px;
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+      }
+
+      .card strong,
+      .metric strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text);
+        font-size: 21px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 26px;
+        align-items: end;
+      }
+
+      .hero-visual,
+      .visual {
+        min-height: 520px;
+        border-radius: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+
+      .hero-visual {
+        background-image:
+          linear-gradient(180deg, rgba(6, 10, 18, 0.04), rgba(6, 10, 18, 0.48)),
+          url("assets/hero-symbiosis.jpg");
+      }
+
+      .problem-visual {
+        background-image:
+          linear-gradient(180deg, rgba(8, 10, 16, 0.15), rgba(8, 10, 16, 0.5)),
+          url("assets/problem-fragmented-context.jpg");
+      }
+
+      .vision-visual {
+        background-image:
+          linear-gradient(180deg, rgba(8, 10, 16, 0.1), rgba(8, 10, 16, 0.54)),
+          url("assets/vision-runtime.jpg");
+      }
+
+      .quote {
+        max-width: 720px;
+        padding: 20px 24px;
+        border-left: 4px solid var(--gold);
+        border-radius: 16px;
+        background: rgba(255, 213, 122, 0.08);
+        color: #f6edd2;
+        font-size: clamp(20px, 2.2vw, 30px);
+        line-height: 1.35;
+      }
+
+      .stack {
+        display: grid;
+        gap: 16px;
+      }
+
+      .stack .card {
+        min-height: 144px;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .flow .card {
+        position: relative;
+      }
+
+      .flow .card:not(:last-child)::after {
+        content: ">";
+        position: absolute;
+        top: 50%;
+        right: -16px;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.32);
+        font-size: 26px;
+        font-weight: 800;
+      }
+
+      .metric {
+        padding: 20px 22px;
+        border: 1px solid rgba(120, 231, 255, 0.18);
+        border-radius: 20px;
+        background: rgba(5, 16, 31, 0.62);
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .footer-note {
+        position: absolute;
+        left: 42px;
+        bottom: 28px;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(170, 188, 224, 0.6);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 18px 0 0;
+      }
+
+      .pill {
+        padding: 10px 14px;
+        border: 1px solid rgba(130, 164, 255, 0.22);
+        border-radius: 999px;
+        background: rgba(10, 22, 40, 0.76);
+        color: #dce7ff;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+      }
+
+      code {
+        padding: 0.18em 0.38em;
+        border-radius: 8px;
+        background: rgba(129, 164, 255, 0.12);
+        color: #dce7ff;
+        font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+        font-size: 0.84em;
+      }
+
+      @media (max-width: 980px) {
+        main {
+          width: min(100vw - 24px, 1400px);
+          padding-top: 12px;
+        }
+
+        .slide {
+          min-height: auto;
+          padding: 26px;
+          border-radius: 22px;
+        }
+
+        .hero,
+        .two-col,
+        .grid-3,
+        .grid-4,
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual,
+        .visual {
+          min-height: 320px;
+        }
+
+        .flow .card:not(:last-child)::after {
+          display: none;
+        }
+
+        .footer-note {
+          position: static;
+          margin-top: 18px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        main {
+          width: auto;
+          margin: 0;
+          padding: 0;
+        }
+
+        .slide {
+          margin: 0;
+          min-height: 100vh;
+          page-break-after: always;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="slide">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Pitch Deck</p>
+            <h1>Symbiotic AI</h1>
+            <p class="lede">From stateless assistants to AI that learns how you work.</p>
+            <div class="pill-row">
+              <span class="pill">Durable memory</span>
+              <span class="pill">Behavioral accountability</span>
+              <span class="pill">Action across sessions</span>
+            </div>
+          </div>
+          <div class="hero-visual"></div>
+        </div>
+        <div class="footer-note">Simple system. Compounding context.</div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">01 Problem</p>
+        <div class="two-col">
+          <div>
+            <h2>AI is powerful, but still forgetful.</h2>
+            <ul>
+              <li>Every session starts from zero.</li>
+              <li>Valuable context dies in chat history.</li>
+              <li>Generic advice does not change behavior.</li>
+              <li>Most tools assist for a moment. They do not adapt over time.</li>
+            </ul>
+            <p class="quote">The problem is not intelligence alone. The problem is that the relationship resets.</p>
+          </div>
+          <div class="visual problem-visual"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">02 Insight</p>
+        <h2>The missing layer is durable context.</h2>
+        <p class="lede">Symbiotic AI turns one good conversation into an ongoing operating system for human + AI collaboration.</p>
+        <div class="grid-3">
+          <div class="card">
+            <strong>Memory</strong>
+            <p>Patterns, quotes, commitments, and direction survive across sessions.</p>
+          </div>
+          <div class="card">
+            <strong>Behavior</strong>
+            <p>The agent challenges avoidance, not just validates whatever the user says.</p>
+          </div>
+          <div class="card">
+            <strong>Action</strong>
+            <p>Code, writing, research, and automation all happen inside the same live workspace.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">03 Product</p>
+        <h2>A simple system that compounds.</h2>
+        <div class="grid-4">
+          <div class="card">
+            <strong><code>SOUL.md</code></strong>
+            <p>Defines the agent's identity, tone, and values.</p>
+          </div>
+          <div class="card">
+            <strong><code>USER.md</code></strong>
+            <p>Captures the user's mission, psychology, and working patterns.</p>
+          </div>
+          <div class="card">
+            <strong><code>AGENTS.md</code></strong>
+            <p>Sets protocols, interventions, and operating rules.</p>
+          </div>
+          <div class="card">
+            <strong><code>NOW.md</code></strong>
+            <p>Tracks live tasks, deadlines, and the memory log that grows with use.</p>
+          </div>
+        </div>
+        <div class="flow">
+          <div class="card">
+            <strong>Read at session start</strong>
+            <p>The agent loads the full operating context before doing any work.</p>
+          </div>
+          <div class="card">
+            <strong>Work in the same workspace</strong>
+            <p>The system writes code, researches, and updates active state as it goes.</p>
+          </div>
+          <div class="card">
+            <strong>Compound over time</strong>
+            <p>The next session starts smarter because context is durable, not ephemeral.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">04 Differentiation</p>
+        <h2>Most AI tools optimize for a better answer. Symbiotic AI optimizes for a better ongoing relationship.</h2>
+        <div class="stack">
+          <div class="card">
+            <strong>Challenges</strong>
+            <p>Designed to interrupt avoidance and push toward the user's real goal.</p>
+          </div>
+          <div class="card">
+            <strong>Remembers</strong>
+            <p>Persistent files store history, patterns, commitments, and self-knowledge.</p>
+          </div>
+          <div class="card">
+            <strong>Acts</strong>
+            <p>Not just advice. It writes, researches, automates, and produces output.</p>
+          </div>
+          <div class="card">
+            <strong>Evolves</strong>
+            <p>The system improves as memory accumulates over weeks and months of real use.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">05 Why Now</p>
+        <h2>The timing is right.</h2>
+        <div class="grid-4">
+          <div class="metric">
+            <strong>AI usage is exploding</strong>
+            <span>But the working context is still fragmented across chats, tabs, and tools.</span>
+          </div>
+          <div class="metric">
+            <strong>Power users want continuity</strong>
+            <span>Daily users need memory, not just a better one-off prompt.</span>
+          </div>
+          <div class="metric">
+            <strong>Personalization is the moat</strong>
+            <span>The memory layer is where AI becomes specific, useful, and sticky.</span>
+          </div>
+          <div class="metric">
+            <strong>Files are interoperable</strong>
+            <span>A simple substrate works across runtimes instead of locking users into one interface.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">06 Wedge</p>
+        <h2>Start with power users. Expand into the workspace layer.</h2>
+        <div class="grid-3">
+          <div class="card">
+            <strong>Initial users</strong>
+            <p>Founders, developers, creators, and operators already living inside AI tools.</p>
+          </div>
+          <div class="card">
+            <strong>Distribution</strong>
+            <p>Open source, tutorials, setup sharing, GitHub discussions, and real workflows people can copy.</p>
+          </div>
+          <div class="card">
+            <strong>Expansion</strong>
+            <p>Hosted workspace, premium templates, deeper memory engine, and multi-agent coordination.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">07 Vision</p>
+        <div class="two-col">
+          <div>
+            <h2>The future is not assistant software. It is symbiosis.</h2>
+            <p class="lede">Symbiotic AI is the memory and behavior layer for the next generation of personal AI systems.</p>
+            <ul>
+              <li>Persistent instead of stateless</li>
+              <li>Specific instead of generic</li>
+              <li>Collaborative instead of merely reactive</li>
+            </ul>
+          </div>
+          <div class="visual vision-visual"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
