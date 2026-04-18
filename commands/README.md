@@ -2,7 +2,7 @@
 
 Commands work two ways:
 1. **Manual** - Type `/start-day` in your AI chat
-2. **Scheduled** - Trigger automatically via cron (nanobot, etc.)
+2. **Scheduled** - Trigger automatically via cron (OpenClaw, nanobot, etc.)
 
 ## Available Commands
 
@@ -13,9 +13,56 @@ Commands work two ways:
 | `/end-day` | Evening (9-10pm) | Review and close the day |
 | `/reflect` | Weekly or as needed | Deep reflection, journal entry |
 
+## Scheduling with OpenClaw
+
+[OpenClaw](https://github.com/openclaw/openclaw) is the primary way to schedule commands. It powers HEARTBEAT, Telegram, and cron — and it's designed to work with these files directly.
+
+Add scheduled commands to `~/.openclaw/openclaw.json` under `agents.defaults`:
+
+```json
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/path/to/your/workspace",
+      "heartbeat": {
+        "every": "5m",
+        "target": "telegram",
+        "to": "YOUR_CHAT_ID"
+      }
+    }
+  }
+}
+```
+
+For command-specific schedules, create a named agent entry:
+
+```json
+{
+  "agents": {
+    "entries": {
+      "morning-kickoff": {
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 9 * * *",
+          "tz": "America/New_York"
+        },
+        "payload": {
+          "message": "/start-day",
+          "deliver": true,
+          "channel": "telegram",
+          "to": "YOUR_CHAT_ID"
+        }
+      }
+    }
+  }
+}
+```
+
+See the **[HEARTBEAT Setup Guide](../guides/heartbeat-setup.md)** for full OpenClaw setup instructions.
+
 ## Scheduling with nanobot
 
-Set up automated check-ins via Telegram:
+If you use nanobot for Telegram scheduling, you can set up automated check-ins:
 
 ```
 # In Telegram, tell nanobot:

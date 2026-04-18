@@ -1,6 +1,6 @@
 ---
 description: Quick check-in. Works as manual command or scheduled trigger.
-trigger: Can be scheduled (e.g., 2pm, 5pm daily via nanobot cron)
+trigger: Can be scheduled (e.g., 2pm, 5pm daily via OpenClaw or nanobot cron)
 ---
 
 Read AGENTS.md, SOUL.md, USER.md, NOW.md silently.

@@ -1,6 +1,6 @@
 # Symbiotic AI
 
-Symbiotic AI is a reference implementation of [AI for better thinking loops](https://global-ai-hub-mu.vercel.app) — a category built around the claim that AI can help people think better in ways that survive commitment, action, and review. See proof, methods, and adjacent workflows at the [Global AI Hub](https://global-ai-hub-mu.vercel.app).
+Symbiotic AI is a reference implementation of [AI for better thinking loops](https://thinkingloops.makestudio.app) — a category built around the claim that AI can help people think better in ways that survive commitment, action, and review. See proof, methods, and adjacent workflows at [Thinking Loops](https://thinkingloops.makestudio.app).
 
 Turn one conversation into a clear next step and a system you can keep using. Symbiotic AI gives any model a durable way to carry your context, commitments, and current direction across sessions.
 
