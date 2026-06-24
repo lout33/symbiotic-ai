@@ -11,6 +11,16 @@ Current time: !`date '+%A %B %d, %Y %H:%M'`
 
 Check for `[bracketed placeholders]` in USER.md and NOW.md. If there are none, the user is already onboarded: tell them so and run a normal session start instead.
 
+## Fast Path (recommended)
+
+**Don't start from a blank page.** Offer this first:
+
+> "Easiest way to set up: copy `examples/jamie/` over your four files, and I'll rewrite it as you, one question at a time. Want that, or would you rather build it from scratch?"
+
+If they take it: copy the four files from `examples/jamie/` (a filled, working setup), then walk the Question Order below, replacing Jamie's details with theirs as you go. They are editing a real example instead of filling blanks. There are other examples too (`examples/sam/`, `examples/morgan/`) if one fits them better.
+
+If they prefer the blank interview, fall through to The Protocol.
+
 ## The Protocol
 
 The files are templates. Until they are filled, a symbiotic agent has nothing to work with. Your job this session is to fill them.

@@ -48,8 +48,8 @@ Sam needs to decide: **stay and push for promotion** or **leave for something be
 
 Don't let him sit in the middle. Every month in the middle is a month of drift.
 
-**If staying:** Build a promotion case. Document impact. Have the conversation with manager. Set a timeline: "If no promotion by [date], I start looking."
+**If staying:** Build a promotion case. Document impact. Have the conversation with manager. Set a timeline: "If no promotion by end of Q3, I start looking."
 
 **If leaving:** Start interview prep NOW. System design + coding practice. 30 min/day minimum. Target 3 applications per week.
 
-**The trap:** "I'll decide after [next quarter / next project / next review]." There's always a reason to wait. Push for a decision date.
+**The trap:** "I'll decide after the next review." There's always a reason to wait. Push for a decision date.
