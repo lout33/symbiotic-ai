@@ -1,8 +1,10 @@
 # Symbiotic AI
 
-Symbiotic AI is a reference implementation of [AI for better thinking loops](https://thinkingloops.makestudio.app) — a category built around the claim that AI can help people think better in ways that survive commitment, action, and review. See proof, methods, and adjacent workflows at [Thinking Loops](https://thinkingloops.makestudio.app).
+**Your AI's context should belong to you, not a platform. Symbiotic AI keeps it in plain files you own.**
 
-Turn one conversation into a clear next step and a system you can keep using. Symbiotic AI gives any model a durable way to carry your context, commitments, and current direction across sessions.
+Your identity, commitments, and current direction live in a handful of Markdown files you can read, edit, version, and carry to any model. Native platform memory is opaque, automatic, and locked to one vendor. This is the opposite: you own it, and it moves with you.
+
+Symbiotic AI is also a reference implementation of [AI for better thinking loops](https://thinkingloops.makestudio.app), a category built around the claim that AI can help people think better in ways that survive commitment, action, and review. See proof, methods, and adjacent workflows at [Thinking Loops](https://thinkingloops.makestudio.app).
 
 <a href="https://www.youtube.com/watch?v=tCFSz1vbY6s"><img src="https://i.ibb.co/mCcVCc1m/whiteboard-evolution.jpg" alt="Symbiotic AI Tutorial" border="0"></a>
 
@@ -34,11 +36,19 @@ Want to scale beyond one main agent? See the **[Multi-Agent Hierarchy Guide](gui
 
 > **AI:** "You find something valuable -> People want it -> You feel repulsed by the exchange -> You give it away for free -> You have no money -> Repeat. That's not idealism. That's self-punishment."
 
-**It remembers.** Persistent memory across sessions. Patterns, quotes, history stored in your files.
+**You own it.** Your context lives in plain files you control, not a vendor's black box. Read it, edit it, version it in git, and carry it to any model. Unlike native platform memory, nothing is opaque, automatic, or locked to one tool.
 
 **It acts.** Writes code, researches, creates files. Not just advice.
 
 **It evolves.** After 100+ sessions, your files contain hard-won insights about what works for you specifically. No generic advice. Your patterns, your bugs, your wins.
+
+### Symbiotic AI vs native memory
+
+| | Native platform memory | Symbiotic AI |
+|---|---|---|
+| **Ownership** | Vendor owns it, lives in their account | You own it: plain Markdown files on your disk |
+| **Portability** | Locked to one platform | Runs on any model (Claude Code, Hermes, OpenClaw, opencode) |
+| **Transparency** | Opaque and automatic: you can't see or edit what it stored | You read, edit, delete, and version every line |
 
 ## Installation
 
