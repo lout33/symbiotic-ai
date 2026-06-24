@@ -323,7 +323,7 @@ fi
 if [ "$IS_CLAUDE_CODE" = true ]; then
     echo ""
     echo "Creating CLAUDE.md for Claude Code compatibility..."
-    cat "$TMP_DIR/AGENTS.md" "$TMP_DIR/SOUL.md" "$TMP_DIR/USER.md" > "$TARGET/CLAUDE.md"
+    cat "$TMP_DIR/AGENTS.md" "$TMP_DIR/SOUL.md" "$TMP_DIR/USER.md" "$TMP_DIR/NOW.md" > "$TARGET/CLAUDE.md"
     echo -e "${GREEN}+ Created CLAUDE.md (combined file)${NC}"
 fi
 
