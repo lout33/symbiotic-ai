@@ -10,6 +10,16 @@ Symbiotic AI is also a reference implementation of [AI for better thinking loops
 
 [Watch the tutorial](https://www.youtube.com/watch?v=tCFSz1vbY6s)
 
+## Fastest start
+
+Install the `symbiotic-onboard` skill and run it. A short interview, then you own your files.
+
+```bash
+gh skill install lout33/symbiotic-ai symbiotic-onboard
+```
+
+Then invoke `symbiotic-onboard` in your agent and answer the questions. Full walkthrough (plus the manual path): **[Get your agent to understand you in 10 minutes](guides/getting-started.md)**.
+
 ## The System
 
 The system is simple on purpose: a small set of files that turns one useful session into ongoing context.
