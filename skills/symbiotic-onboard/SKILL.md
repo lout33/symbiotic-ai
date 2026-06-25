@@ -53,9 +53,24 @@ Then, only if the user has energy for more, you can deepen: stack/skills, what c
 - Mirror anything raw before moving on. If an answer is heavy, acknowledge it in one line, then continue. This is setup, not therapy, but do not steamroll a real moment.
 - After each write, you can briefly confirm what you captured so they see the file taking shape and trust that it is theirs.
 
+## Finish the file: defer what you did not ask
+
+This step matters as much as the interview. A short interview fills the high-value fields (name, goal, avoidance, today's MIT) but leaves dozens of secondary `[bracketed placeholders]` in `USER.md` and `NOW.md` (age, location, stack, energy map, relationships, financials). If you leave those raw, a first-time user sees broken-looking brackets and assumes the skill half-failed. Do not turn the interview into a 40-question wall to avoid this. Handle it at the end instead.
+
+As your final write, sweep `USER.md` and `NOW.md` and resolve every remaining `[bracketed placeholder]` you did not fill, using whichever reads cleaner per field:
+
+- **Replace it with a deferred marker** so the structure stays visible but reads as intentional: `_(not set yet, your agent will fill this in as it learns you)_`. Use this for fields worth keeping in view (stack, energy map, psychology bugs, milestones).
+- **Drop the whole optional subsection** when an empty scaffold adds noise rather than value (for example a `Career` or `Shipped` table the user has nothing for yet). Removing it is cleaner than a table of deferred markers.
+
+Leave markdown checkboxes like `[ ]` alone. Those are list syntax, not placeholders. You are only resolving the descriptive `[Your ...]`-style fill-ins.
+
+The end state is firm: **no raw `[Your ...]`-style brackets remain.** Every field is either filled in the user's words or shows the clear deferred treatment. The file should read as complete and intentional, never as broken output.
+
+Because the deferred marker uses parentheses, not brackets, it will not re-trigger the agent's onboarding protocol on the next session. The bundled `AGENTS.md` tells the agent to fill these deferred fields naturally as it learns the user, so they complete through use rather than a wall of questions.
+
 ## Close
 
-When name, goal, avoidance, and today's MIT are written and those placeholders are gone:
+When name, goal, avoidance, and today's MIT are written, the deferred sweep is done, and no raw `[bracketed placeholders]` remain:
 
 1. Confirm: "You are set up. I know who you are and what today is about."
 2. State today's MIT back to them in their own words.
@@ -76,4 +91,4 @@ This is the step that makes the work real. End by showing the user how their new
 
 ## What good looks like
 
-A successful run ends with: `USER.md` and `NOW.md` no longer containing the four starter placeholders (name, current goal, avoidance, today's MIT), the content written in the user's own words, `SOUL.md` and `AGENTS.md` present, and the user told one concrete way to load the files with their agent. The user owns four real files, not a hidden memory.
+A successful run ends with: the four starter fields (name, current goal, avoidance, today's MIT) written in the user's own words, **no raw `[bracketed placeholders]` left anywhere** in `USER.md` or `NOW.md` (every unasked field either deferred with the `_(not set yet, ...)_` marker or its empty subsection dropped), `SOUL.md` and `AGENTS.md` present, and the user told one concrete way to load the files with their agent. The files read as complete and intentional. The user owns four real files, not a hidden memory.

@@ -16,7 +16,10 @@ Instead:
 2. Write each answer into the right file as you go (USER.md for profile, NOW.md for current state).
 3. Start with: name, current goal, what they are avoiding, today's MIT.
 4. Defer financials and deep psychology to later sessions. Get them operational first.
-5. Once the placeholders are filled, resume normal session start.
+5. Once the high-value fields are filled, replace any remaining `[bracketed placeholders]` with a deferred marker like `_(not set yet, your agent will fill this in as it learns you)_`, or drop the empty optional subsection. Never leave raw brackets that read as broken.
+6. Once no raw placeholders remain, resume normal session start.
+
+**Filling deferred fields over time:** Fields marked `_(not set yet, ...)_` are not failures, they are open slots. As you learn the user through normal sessions, fill them in naturally when the answer comes up. Do not interrogate the user to clear them. A deferred field gets completed through use, not a wall of questions.
 
 Run `/onboard` to drive this end to end.
 
