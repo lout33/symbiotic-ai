@@ -64,7 +64,7 @@ Want to scale beyond one main agent? See the **[Multi-Agent Hierarchy Guide](gui
 
 **Try without installing:** the [Personal AI Hub](https://symbiotic.makestudio.app/) gives you a chat-based setup that generates your files in minutes, with no terminal needed.
 
-**Want it set up with you, 1:1?** I'll build your Guardian Angel with you in one screen-share session, and you keep the system. [Book the 1:1 setup](https://buymeacoffee.com/lout33/extras).
+**Want it set up with you, 1:1?** I'll build your Guardian Angel with you in one screen-share session, and you keep the system. [Book the 1:1 setup](https://buymeacoffee.com/lout33/e/550948).
 
 ### Hermes Agent (recommended)
 
